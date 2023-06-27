@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            CALCULATOR
+        </title>
+    </head>
+    <body bgcolor="#ece6ff">
+        
+        <style>
+        input:hover{
+            background: #d966ff;
+            color: black;
+        }
+
+        .buttonstyle{
+            border-style: none;
+            padding: 15px 32px;
+            background-color:black;
+            color:#d966ff;
+        }
+
+        h1{
+            color:#00334d;
+        }
+
+        div{
+            margin: 50px;
+        }
+        </style>
+
+        <script>
+            function find(){
+                /*var expression_ref = document.getElementById("area");
+                var expression =expression_ref.value;
+                expression_ref.value = eval(expression);*/
+                document.getElementById("area").value=eval(document.getElementById("area").value);
+            }
+
+            function clearAll(){
+                document.getElementById("area").value=' ';
+            }
+
+            function dispalyInTextArea(n){
+                 document.getElementById("area").value = document.getElementById("area").value+n;
+            }
+            
+            function Del(){
+                var s=document.getElementById("area").value;
+                var l=document.getElementById("area").value.length;
+                document.getElementById("area").value=s.substr(0,l-1);
+            }
+        </script>
+
+        <div>
+            <form>
+                <table cellspacing ="0" cellpadding ="6">
+                    <caption><h1>CALCULATOR</h1></caption>
+                
+                    <tr><td colspan="6"><textarea cols="46" rows="3" id="area"></textarea></td></tr>
+                    <tr>
+                        <td><input class = "buttonstyle" type="button" value="AC" onclick="clearAll()"></td>
+                        <td colspan="2"><input class = "buttonstyle" type="button" value="           DEL           " onclick ="Del()" size="3"></td>
+                        </td><td><input class = "buttonstyle" type="button" value="/" onclick="dispalyInTextArea('/')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class = "buttonstyle" type="button" value="1" onclick="dispalyInTextArea('1')"></td>
+                        <td><input class = "buttonstyle" type="button" value="2" onclick="dispalyInTextArea('2')"></td>
+                        <td><input class = "buttonstyle" type="button" value="3" onclick="dispalyInTextArea('3')"></td>
+                        <td><input class = "buttonstyle" type="button" value="x" onclick="dispalyInTextArea('*')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class = "buttonstyle" type="button" value="4" onclick="dispalyInTextArea('4')"></td>
+                        <td><input class = "buttonstyle" type="button" value="5" onclick="dispalyInTextArea('5')"></td>
+                        <td><input class = "buttonstyle" type="button" value="6" onclick="dispalyInTextArea('6')"></td>
+                        <td><input class = "buttonstyle" type="button" value="-" onclick="dispalyInTextArea('-')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class = "buttonstyle" type="button" value="7" onclick="dispalyInTextArea(7)"></td>
+                        <td><input class = "buttonstyle" type="button" value="8" onclick="dispalyInTextArea(8)"></td>
+                        <td><input class = "buttonstyle" type="button" value="9" onclick="dispalyInTextArea(9)"></td>
+                        <td><input class = "buttonstyle" type="button" value="+" onclick="dispalyInTextArea('+')"></td>
+                    </tr>
+                    <tr>
+                        <td><input class = "buttonstyle" type="button" value="." onclick="dispalyInTextArea('.')"></td>
+                        <td><input class = "buttonstyle" type="button" value="0" onclick="dispalyInTextArea('0')"></td>
+                        <td><input class = "buttonstyle" type="button" value="(" onclick="dispalyInTextArea('(')"></td>
+                        <td><input class = "buttonstyle" type="button" value=")" onclick="dispalyInTextArea(')')"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td colspan="4"><input class = "buttonstyle" type="button" value="                                      =                                       " onclick="find()"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
